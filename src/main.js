@@ -4,11 +4,15 @@ import router from './routers'
 import store from './stores'
 import axios from 'axios'
 
+import Scroller from '@/components/Scroller'
+import Loading from '@/components/Loading'
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
 Vue.filter('setWH',(url, arg)=>{
   return url.replace(/w\.h/,arg)
 })
+Vue.component('Scroller',Scroller);
+Vue.component('Loading',Loading);
 new Vue({
   router,
   store,
